@@ -18,8 +18,9 @@ import io.dropwizard.Configuration;
  */
 public class ServerConfiguration extends Configuration {
 
-	Collection<String> seedIps = Arrays.asList(new String[]{"127.0.0.1"});
-	String dataServerClass = CassandraDataServer.class.getCanonicalName();
+	private Collection<String> seedIps = Arrays.asList(new String[]{"127.0.0.1"});
+	private String dataServerClass = CassandraDataServer.class.getCanonicalName();
+	private int replicationFactor = 1;
 	
 	@JsonProperty
 	public void setDatabaseHosts(Collection<String> seedIps){
@@ -37,5 +38,14 @@ public class ServerConfiguration extends Configuration {
 	
 	public String getDataServerClass(){
 		return dataServerClass;
+	}
+	
+	@JsonProperty
+	public void setReplicationFactor(int factor){
+		this.replicationFactor = factor;
+	}
+	
+	public int getReplicationFactor(){
+		return replicationFactor;
 	}
 }

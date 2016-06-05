@@ -11,5 +11,5 @@ import com.enorack.server.ServerConfiguration;
  */
 public interface DataServer {
 
-	public void initalize(ServerConfiguration config);
+	public void initalize(ServerConfiguration config) throws Exception;
 }

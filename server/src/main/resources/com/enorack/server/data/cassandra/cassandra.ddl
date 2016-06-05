@@ -1,0 +1,1 @@
+CREATE TABLE CELLAR_INVENTORY (count counter, owner varchar, cellar_name varchar, bottling varchar, vintage int , PRIMARY KEY ((owner,cellar_name),bottling,vintage));
